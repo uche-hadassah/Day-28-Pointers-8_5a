@@ -9,26 +9,5 @@ using namespace std;
 const int MAX = 100;
 int main()
 {
-	char word[MAX];
-	char* p;
-	int i;
-	cout << "Enter a word:";
-	cin >> word;
-	p = word;
-	for (i = 0; word[i] != '\0'; i++);
-	i--;//Decrement i to point to the last character and not the null
-	while (p < (word + i))//where (word + i) points to the position after the last character in the string.In this case \0
-	{
-		if (*p != word[i])
-		{
-			cout << "This is not a palindrome!";
-			break;
-		}
-		p++;
-		i--;
-	}
-	if (p >= (word + i))
-	{
-		cout << "It is a palindrome!";
-	}
+	
 }
