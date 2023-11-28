@@ -1,8 +1,5 @@
-/*Repeat exercise 3a  from exercise sheet 6, using pointers.
-3a)) Write a program which reads a word and checks if it is a palindrome 
-by outputting the appropriate message: This is a palindrome accordingly. A 
-word is a palindrome if the letters spell the same message when written both forward 
-and backward. For example: madam, anna, bob, noon are palindromes.*/
+/*Name:Uche Hadassah
+This program makes use of pointers to read a word and check if it's a palindrome*/
 #include<iostream>
 #include<cstring>
 using namespace std;
@@ -17,7 +14,7 @@ int main()
 	p = word;
 	for (i = 0; word[i] != '\0'; i++);
 	i--;
-	while (p < (word + i))
+	while (p < (word + i))//(word + i) basically means null character since it adds i to the position of the first element
 	{
 		if (*p != word[i])
 		{
@@ -27,6 +24,6 @@ int main()
 		p++;
 		i--;
 	}
-	if (p >= (word + i))
+	if (p >= (word + i))//in case of even numbers too
 		cout << "It is a palindrome.";
 }
