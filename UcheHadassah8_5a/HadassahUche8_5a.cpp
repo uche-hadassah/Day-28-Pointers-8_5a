@@ -16,13 +16,19 @@ int main()
 	cin >> word;
 	p = word;
 	for (i = 0; word[i] != '\0'; i++);
-	while (*p <= i)
+	i--;//Decrement i to point to the last character and not the null
+	while (p < (word + i))//where (word + i) points to the position after the last character in the string.In this case \0
 	{
 		if (*p != word[i])
+		{
 			cout << "This is not a palindrome!";
-		if (*p == word[i])
-			p++; i--;
-		if (*p >= i)
-			cout << "It is a palindrome.";
+			break;
+		}
+		p++;
+		i--;
+	}
+	if (p >= (word + i))
+	{
+		cout << "It is a palindrome!";
 	}
 }
