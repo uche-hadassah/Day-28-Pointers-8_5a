@@ -9,5 +9,24 @@ using namespace std;
 const int MAX = 100;
 int main()
 {
-	
+	char  word[MAX];
+	char* p;
+	int i;
+	cout << "Enter a word:";
+	cin >> word;
+	p = word;
+	for (i = 0; word[i] != '\0'; i++);
+	i--;
+	while (p < (word + i))
+	{
+		if (*p != word[i])
+		{
+			cout << "It is not a palindrome.";
+			break;
+		}
+		p++;
+		i--;
+	}
+	if (p >= (word + i))
+		cout << "It is a palindrome.";
 }
